@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import './style.css';
+import ColorBox from './components/ColorBox'
 
 function App() {
+
+  const [Colors,setColors]= useState(["#AA55BB","#22AA55","#AA44FF"])
+
+  const genColors=()=>{
+    var newColors=[]
+    for (let itr in Colors){
+      newColors.push("#"+(Math.random()*16777215).toString(16).split('.')[0])
+      console.log((Math.random()*16777215).toString(16).split('.')[0])
+    }
+
+    setColors(newColors)
+  }
+
+  document.body.onkeydown=  function(e){
+    if (e.key===" "){
+      genColors()
+    }
+  }
+
+ 
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {Colors.map((color)=>
+      <ColorBox key={Colors.indexOf(color)} bgCol={color} boxWidth={Colors.length}/>
+      )}
     </div>
   );
 }
