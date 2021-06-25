@@ -4,6 +4,8 @@
 
 //Colors
 
+$buttonColor:#3597E6;
+
  ul{
      padding: 0;
      margin: 0;
@@ -26,6 +28,7 @@
         left: 37%;
 
         #button{
+            box-shadow: 0px 0px 10px $buttonColor;
             display: flex;
             flex-direction: column;
             place-content: center;
@@ -37,6 +40,7 @@
         }
 
         #button:hover{
+            cursor: grab;
             transform: scale(120%);
         }
     

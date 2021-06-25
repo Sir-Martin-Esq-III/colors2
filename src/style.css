@@ -36,6 +36,8 @@ ul {
 }
 
 .App .button-container #button {
+  -webkit-box-shadow: 0px 0px 10px #3597E6;
+          box-shadow: 0px 0px 10px #3597E6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,6 +56,8 @@ ul {
 }
 
 .App .button-container #button:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transform: scale(120%);
           transform: scale(120%);
 }
