@@ -19,7 +19,7 @@ function App() {
         continue
       }
       //Creates a new hex value and converts it to a vaild hex color string
-      newColors.push("#"+(Math.random()*16777215).toString(16).split('.')[0])
+      newColors.push("#"+(Math.random()*16777215).toString(16).split('.')[0].toUpperCase())
     }
     setColors(newColors)
   }
