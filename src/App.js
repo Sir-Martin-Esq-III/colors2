@@ -1,6 +1,9 @@
-import {useState } from 'react';
+import {useState} from 'react';
 import './style.css';
 import ColorBox from './components/ColorBox'
+import Addbutton from './components/AddButton';
+import RemoveButton from './components/RemoveButton';
+
 
 function App() {
 
@@ -13,15 +16,20 @@ function App() {
     var newColors=[]
     setPrevColors(Colors)
     for (let col in Colors){
-      console.log("TEST"+Colors[col]+" "+lockedColors);
       if (lockedColors.includes(Colors[col])){
         newColors.push(Colors[col])
         continue
       }
       //Creates a new hex value and converts it to a vaild hex color string
-      newColors.push("#"+(Math.random()*16777215).toString(16).split('.')[0].toUpperCase())
+      var newCol=genNewHex()
+      console.log(newCol)
+      newColors.push(newCol)
     }
     setColors(newColors)
+  }
+
+  function genNewHex(){
+      return String("#"+(Math.random()*16777215).toString(16).split('.')[0].toUpperCase())
   }
 
   //Checks for space press or backspace 
@@ -38,6 +46,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className="button-container">
+        <RemoveButton setCol={setColors} col={Colors}/>
+        <Addbutton setColors={setColors} colors={Colors} newHexGen={genNewHex}/>
+      </div>
       {Colors.map((color)=>
       <ColorBox key={Colors.indexOf(color)} bgCol={color} boxWidth={Colors.length} lockedCols={setLockedColors} lockedList={lockedColors}/>
       )}

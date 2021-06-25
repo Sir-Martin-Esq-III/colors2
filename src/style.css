@@ -17,6 +17,47 @@ ul {
   font-family: 'Montserrat', sans-serif;
 }
 
+.App .button-container {
+  position: fixed;
+  width: 25%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 85%;
+  left: 37%;
+}
+
+.App .button-container #button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.App .button-container #button:hover {
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
+}
+
 .App .ColorBox-container {
   height: 100%;
   display: -webkit-box;

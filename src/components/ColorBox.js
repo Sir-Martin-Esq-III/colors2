@@ -6,7 +6,6 @@ import LockOpenIcon from '@material-ui/icons/LockOpen';
 function ColorBox(props) {
 
     const bWidth=100/props.boxWidth+"vw";
-    const textColor="color-mix(#FFFFFF,"+props.bgCol+")"
     const [locked, setLocked]=useState(false)
    
     //Adds current Color to clipboard
@@ -31,8 +30,6 @@ function ColorBox(props) {
         lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
     }
 
-
-    console.log(textColor);
     return (
         <div className="ColorBox-container" style={{backgroundColor:props.bgCol, width:bWidth}}>
             <div className="colorBox-content">
