@@ -2,20 +2,13 @@ import React, {useState } from 'react';
 import LockIcon from '@material-ui/icons/Lock';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
-
-import tinycolor, { TinyColor } from '@ctrl/tinycolor';
+import tinycolor from '@ctrl/tinycolor';
 
 function ColorBox(props) {
 
-
-
     var tc=new tinycolor(props.bgCol)
-    var itemColor
-    if(tc.isDark()){
-        itemColor=tc.lighten(25).toString(); 
-    }else{
-        itemColor=tc.darken(25).toString(); 
-    }
+    var itemColor=(tc.isDark()?tc.lighten(25).toString():tc.darken(25).toString())
+    
     const bWidth=100/props.boxWidth+"vw";
     const [locked, setLocked]=useState(false)
    
@@ -24,6 +17,7 @@ function ColorBox(props) {
         alert("Copied");
         navigator.clipboard.writeText(props.bgCol)
     }
+
     //Function to lock/unlock the color
     const lockColor=()=>{
         if(!locked){
@@ -36,10 +30,10 @@ function ColorBox(props) {
         }
     }
     //Changes lock Icon 
-    var lockIcon=<LockIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>
-    if (!locked){
-        lockIcon=<LockOpenIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>
-    }
+    var lockIcon=(locked?
+                <LockIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>:
+                <LockOpenIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>)
+   
 
     return (
         <div className="ColorBox-container" style={{backgroundColor:props.bgCol, width:bWidth}}>

@@ -13,10 +13,7 @@ function RemoveButton(props) {
         }
     }
 
-    var bgCol="white"
-    if(len<=1){
-        bgCol="grey"
-    }
+    var bgCol=(len<=1? "grey":"white")
     return (
         <div className="rem-icon-container" style={{backgroundColor:bgCol}} id="button" onClick={remCol}>
             <RemoveIcon  />

@@ -11,10 +11,7 @@ function Addbutton(props) {
             props.setColors(props.colors.concat(newCol))
         }
     }
-    var bgCol="white"
-    if(len>=10){
-        bgCol="grey"
-    }
+    var bgCol=(len>=10? "grey":"white")
     return (
         <div className="add-icon-container" style={{backgroundColor:bgCol}} id="button" onClick={addColor}>
             <AddIcon  />
