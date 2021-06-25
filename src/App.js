@@ -13,7 +13,7 @@ function App() {
     setPrevColors(Colors)
     for (let col in Colors){
       console.log("TEST"+Colors[col]+" "+lockedColors);
-      if (Colors[col]===lockedColors){
+      if (lockedColors.includes(Colors[col])){
         newColors.push(Colors[col])
         continue
       }
