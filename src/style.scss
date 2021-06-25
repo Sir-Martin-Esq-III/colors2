@@ -25,6 +25,7 @@
             align-items: center;
 
             .content-list{
+                opacity: 0;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -32,6 +33,11 @@
                 height: 50vh;
                 justify-content: space-between;
             }
+        }
+    }
+    .ColorBox-container:hover{
+        .content-list{
+            opacity: 1;
         }
     }
 }

@@ -42,6 +42,7 @@ ul {
 }
 
 .App .ColorBox-container .colorBox-content .content-list {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,5 +57,9 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.App .ColorBox-container:hover .content-list {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
