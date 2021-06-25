@@ -3,8 +3,19 @@ import LockIcon from '@material-ui/icons/Lock';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
+import tinycolor, { TinyColor } from '@ctrl/tinycolor';
+
 function ColorBox(props) {
 
+
+
+    var tc=new tinycolor(props.bgCol)
+    var itemColor
+    if(tc.isDark()){
+        itemColor=tc.lighten(25).toString(); 
+    }else{
+        itemColor=tc.darken(25).toString(); 
+    }
     const bWidth=100/props.boxWidth+"vw";
     const [locked, setLocked]=useState(false)
    
@@ -25,9 +36,9 @@ function ColorBox(props) {
         }
     }
     //Changes lock Icon 
-    var lockIcon=<LockIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
+    var lockIcon=<LockIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>
     if (!locked){
-        lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
+        lockIcon=<LockOpenIcon style={{color:itemColor}} className="icon"  onClick={lockColor}/>
     }
 
     return (
@@ -35,8 +46,8 @@ function ColorBox(props) {
             <div className="colorBox-content">
                 <ul className="content-list">
                     {lockIcon}
-                    <FileCopyIcon style={{color:props.bgCol, mixBlendMode: "multiply"}}className="icon" onClick={clipboardColor}/>
-                    <h1 style={{color:props.bgCol, mixBlendMode: "multiply"}}className="icon"onClick={clipboardColor}>{props.bgCol}</h1>
+                    <FileCopyIcon style={{color:itemColor}}className="icon" onClick={clipboardColor}/>
+                    <h1 style={{color:itemColor}}className="icon"onClick={clipboardColor}>{props.bgCol}</h1>
                 </ul> 
             </div>
             
