@@ -1,4 +1,5 @@
 //fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
 //Colors
@@ -12,6 +13,7 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
 
     .ColorBox-container{
         height: 100%;
@@ -32,6 +34,17 @@
 
                 height: 50vh;
                 justify-content: space-between;
+
+                .icon{
+                    h1{
+                        mix-blend-mode: "hard-light"
+                    }
+                }
+
+                .icon:hover{
+                    cursor: grab;
+                    transform: scale(120%);
+                }
             }
         }
     }
@@ -40,4 +53,4 @@
             opacity: 1;
         }
     }
-}
+} 

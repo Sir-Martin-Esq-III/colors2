@@ -30,9 +30,9 @@ function ColorBox(props) {
         //props.lockedCols(props.bgCol)
     }
 
-    var lockIcon=<LockIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="lock"  onClick={lockColor}/>
+    var lockIcon=<LockIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
     if (!locked){
-        lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="lock"  onClick={lockColor}/>
+        lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
     }
 
 
@@ -42,9 +42,9 @@ function ColorBox(props) {
             <div className="colorBox-content">
                 <ul className="content-list">
                     {lockIcon}
-                    <FileCopyIcon style={{color:props.bgCol, mixBlendMode: "multiply"}}className="Copy" onClick={clipboardColor}/>
-                    <h1>{props.bgCol}</h1>
-                </ul>
+                    <FileCopyIcon style={{color:props.bgCol, mixBlendMode: "multiply"}}className="icon" onClick={clipboardColor}/>
+                    <h1 style={{color:props.bgCol, mixBlendMode: "multiply"   }}className="icon"onClick={clipboardColor}>{props.bgCol}</h1>
+                </ul> 
             </div>
             
         </div>
