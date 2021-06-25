@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import LockIcon from '@material-ui/icons/Lock';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
@@ -9,16 +9,14 @@ function ColorBox(props) {
     const textColor="color-mix(#FFFFFF,"+props.bgCol+")"
     const [locked, setLocked]=useState(false)
    
-
+    //Adds current Color to clipboard
     const clipboardColor=()=>{
         alert("Copied");
         navigator.clipboard.writeText(props.bgCol)
     }
-    
+    //Function to lock/unlock the color
     const lockColor=()=>{
-        //Check if the current element is already locked
-        // If this is not in the lockedList
-        if(props.lockedList.includes(props.bgCol)===false){
+        if(!locked){
             setLocked(true)
             props.lockedCols(props.lockedList.concat(props.bgCol));
         }else{
@@ -26,10 +24,8 @@ function ColorBox(props) {
             props.lockedList.splice(props.lockedList.indexOf(props.bgCol),1)
             props.lockedCols(props.lockedList)
         }
-
-        //props.lockedCols(props.bgCol)
     }
-
+    //Changes lock Icon 
     var lockIcon=<LockIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
     if (!locked){
         lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="icon"  onClick={lockColor}/>
@@ -43,7 +39,7 @@ function ColorBox(props) {
                 <ul className="content-list">
                     {lockIcon}
                     <FileCopyIcon style={{color:props.bgCol, mixBlendMode: "multiply"}}className="icon" onClick={clipboardColor}/>
-                    <h1 style={{color:props.bgCol, mixBlendMode: "multiply"   }}className="icon"onClick={clipboardColor}>{props.bgCol}</h1>
+                    <h1 style={{color:props.bgCol, mixBlendMode: "multiply"}}className="icon"onClick={clipboardColor}>{props.bgCol}</h1>
                 </ul> 
             </div>
             
