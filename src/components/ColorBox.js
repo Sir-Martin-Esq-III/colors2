@@ -19,11 +19,9 @@ function ColorBox(props) {
         //Check if the current element is already locked
         // If this is not in the lockedList
         if(props.lockedList.includes(props.bgCol)===false){
-            alert("Locked")
             setLocked(true)
             props.lockedCols(props.lockedList.concat(props.bgCol));
         }else{
-            alert("unlocked")
             setLocked(false)
             props.lockedList.splice(props.lockedList.indexOf(props.bgCol),1)
             props.lockedCols(props.lockedList)
@@ -32,9 +30,9 @@ function ColorBox(props) {
         //props.lockedCols(props.bgCol)
     }
 
-    var lockIcon=<LockIcon style={{color:textColor}} className="lock"  onClick={lockColor}/>
+    var lockIcon=<LockIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="lock"  onClick={lockColor}/>
     if (!locked){
-        lockIcon=<LockOpenIcon style={{color:textColor}} className="lock"  onClick={lockColor}/>
+        lockIcon=<LockOpenIcon style={{color:props.bgCol, mixBlendMode: "multiply"}} className="lock"  onClick={lockColor}/>
     }
 
 
@@ -44,7 +42,7 @@ function ColorBox(props) {
             <div className="colorBox-content">
                 <ul className="content-list">
                     {lockIcon}
-                    <FileCopyIcon className="Copy" onClick={clipboardColor}/>
+                    <FileCopyIcon style={{color:props.bgCol, mixBlendMode: "multiply"}}className="Copy" onClick={clipboardColor}/>
                     <h1>{props.bgCol}</h1>
                 </ul>
             </div>

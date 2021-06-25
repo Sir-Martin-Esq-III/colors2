@@ -52,7 +52,6 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
   height: 50vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
