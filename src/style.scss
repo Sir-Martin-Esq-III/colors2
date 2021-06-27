@@ -17,6 +17,23 @@ $buttonColor:#3597E6;
     flex-direction: row;
     font-family: 'Montserrat', sans-serif;
 
+    .modal{
+        position: fixed;
+        z-index: 1300;
+        position: absolute;
+        top: 15%;
+        width: 50%;
+        background-color: white;
+        left: 35%;
+
+        
+    }
+    .modal-content{
+        background-color: white;
+        border-radius: 20px;
+        padding: 10%;
+    }
+
     .button-container{
         position: fixed;
         width: 25%;

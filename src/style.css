@@ -17,6 +17,22 @@ ul {
   font-family: 'Montserrat', sans-serif;
 }
 
+.App .modal {
+  position: fixed;
+  z-index: 1300;
+  position: absolute;
+  top: 15%;
+  width: 50%;
+  background-color: white;
+  left: 35%;
+}
+
+.App .modal-content {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10%;
+}
+
 .App .button-container {
   position: fixed;
   width: 25%;

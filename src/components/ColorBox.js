@@ -4,18 +4,21 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import tinycolor from '@ctrl/tinycolor';
 
-function ColorBox(props) {
 
+function ColorBox(props) {
+    
     var tc=new tinycolor(props.bgCol)
     var itemColor=(tc.isDark()?tc.lighten(25).toString():tc.darken(25).toString())
+
+
     
     const bWidth=100/props.boxWidth+"vw";
     const [locked, setLocked]=useState(false)
    
     //Adds current Color to clipboard
     const clipboardColor=()=>{
-        alert("Copied");
         navigator.clipboard.writeText(props.bgCol)
+        alert("Copied");
     }
 
     //Function to lock/unlock the color

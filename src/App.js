@@ -3,13 +3,17 @@ import './style.css';
 import ColorBox from './components/ColorBox'
 import Addbutton from './components/AddButton';
 import RemoveButton from './components/RemoveButton';
+import ModalComp from './components/Modal';
+
+
 
 
 function App() {
 
-  const [Colors,setColors]= useState(["#AA55BB","#22AA55","#AA44FF"])
+  const [Colors,setColors]= useState(["#3D72E3 ","#7CDF31","#F02390"])
   const [lockedColors,setLockedColors]=useState([])
   const [prevColors,setPrevColors]= useState([])
+  
   
 //Generates a new array of colors
   const genColors=()=>{
@@ -44,8 +48,15 @@ function App() {
     }
   }
 
+
+
+  
+
+
   return (
     <div className="App">
+      {/*<ModalComp/>*/}
+
       <div className="button-container">
         <RemoveButton setCol={setColors} col={Colors}/>
         <Addbutton setColors={setColors} colors={Colors} newHexGen={genNewHex}/>
