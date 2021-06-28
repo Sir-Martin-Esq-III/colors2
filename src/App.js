@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="App">
-      {/*<ModalComp/>*/}
+        <ModalComp/>
 
       <div className="button-container">
         <RemoveButton setCol={setColors} col={Colors}/>
