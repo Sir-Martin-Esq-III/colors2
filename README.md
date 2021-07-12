@@ -1,5 +1,6 @@
-#Colors2Palette
+# Colors2Palette
 The simple color palette generator built in React.js
+
 https://colors2palette.herokuapp.com/
 
 ![gif webpage working working](github-gif.gif)
